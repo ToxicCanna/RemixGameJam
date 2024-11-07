@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wizard2
   m_EditorClassIdentifier: 
   enemyName: White Wizard
-  health: 0
-  attack: 0
-  defense: 0
-  gold: 0
+  health: 140
+  attack: 160
+  defense: 20
+  gold: 35

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36162c6e3c6df7b478d240634cfe6317, type: 3}
   m_Name: BlueGolem
   m_EditorClassIdentifier: 
-  enemyName: Blue Golem
-  health: 0
-  attack: 0
-  defense: 0
-  gold: 0
+  enemyName: "Golem \u03B2"
+  health: 100
+  attack: 140
+  defense: 50
+  gold: 50

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mummy
   m_EditorClassIdentifier: 
   enemyName: Mummy
-  health: 0
-  attack: 0
-  defense: 0
-  gold: 0
+  health: 70
+  attack: 65
+  defense: 15
+  gold: 8
