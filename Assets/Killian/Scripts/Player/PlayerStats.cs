@@ -39,53 +39,51 @@ public class PlayerStats : Singleton<PlayerStats>
     #endregion
 
     #region KeyStorage
-    public bool CanPayYellow()
+    public enum KeyColor { Yellow, Red, Blue }
+
+    public void AddKey(KeyColor keyColor)
     {
-        if (YKeys > 0)
+        switch (keyColor)
         {
-            YKeys--;
-            return true;
-        }
-        else
-        {
-            return false;
+            case KeyColor.Yellow:
+                YKeys++;
+                break;
+            case KeyColor.Red:
+                RKeys++;
+                break;
+            case KeyColor.Blue:
+                BKeys++;
+                break;
         }
     }
-    public bool CanPayRed()
+
+    public bool CanPay(KeyColor keyColor)
     {
-        if (RKeys > 0)
+        switch (keyColor)
         {
-            RKeys--;
-            return true;
+            case KeyColor.Yellow:
+                if (YKeys > 0)
+                {
+                    YKeys--;
+                    return true;
+                }
+                break;
+            case KeyColor.Red:
+                if (RKeys > 0)
+                {
+                    RKeys--;
+                    return true;
+                }
+                break;
+            case KeyColor.Blue:
+                if (BKeys > 0)
+                {
+                    BKeys--;
+                    return true;
+                }
+                break;
         }
-        else
-        {
-            return false;
-        }
-    }
-    public bool CanPayBlue()
-    {
-        if (BKeys > 0)
-        {   
-            BKeys--;
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    public void AddYellow()
-    {
-        YKeys++;
-    }
-    public void AddRed()
-    {
-        RKeys++;
-    }
-    public void AddBlue()
-    {
-        BKeys++;
+        return false;
     }
     #endregion
 }
