@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileType: 3
   requiredKeyColor: 0
-  targetFloor: 6
-  targetPosition: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 26, y: 8, z: 0}
   wallSprite: {fileID: 0}
   doorSprite: {fileID: 0}
   stairSprite: {fileID: 21300000, guid: 0a1690db1021b784d9de9df6973fd165, type: 3}

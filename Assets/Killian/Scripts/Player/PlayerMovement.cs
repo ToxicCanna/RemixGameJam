@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
             else if (tile.tileType == CustomTile.TileType.Stair)
             {
                 TeleportToStair(tile);
-                isMoving = true;
+                isMoving = false;
                 return;
             }
         }
