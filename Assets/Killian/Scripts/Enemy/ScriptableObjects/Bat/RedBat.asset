@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36162c6e3c6df7b478d240634cfe6317, type: 3}
   m_Name: RedBat
   m_EditorClassIdentifier: 
-  enemyName: Red Bat
-  health: 5
-  attack: 15
-  defense: 5
-  gold: 5
+  enemyName: Blood Dragon
+  health: 100
+  attack: 100
+  defense: 10
+  gold: 16

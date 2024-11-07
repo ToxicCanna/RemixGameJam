@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bat
   m_EditorClassIdentifier: 
   enemyName: Bat
-  health: 5
-  attack: 15
+  health: 30
+  attack: 35
   defense: 5
-  gold: 5
+  gold: 3

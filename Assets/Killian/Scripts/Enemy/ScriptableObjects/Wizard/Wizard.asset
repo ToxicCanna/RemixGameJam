@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wizard
   m_EditorClassIdentifier: 
   enemyName: Red Wizard
-  health: 0
-  attack: 0
-  defense: 0
-  gold: 0
+  health: 130
+  attack: 170
+  defense: 30
+  gold: 40

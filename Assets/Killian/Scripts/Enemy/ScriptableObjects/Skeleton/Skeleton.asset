@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Skeleton
   m_EditorClassIdentifier: 
   enemyName: Skeleton
-  health: 0
-  attack: 0
-  defense: 0
-  gold: 0
+  health: 50
+  attack: 50
+  defense: 2
+  gold: 4

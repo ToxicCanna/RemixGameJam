@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36162c6e3c6df7b478d240634cfe6317, type: 3}
   m_Name: WarriorMummy
   m_EditorClassIdentifier: 
-  enemyName: Warrior Mummy
-  health: 0
-  attack: 0
-  defense: 0
-  gold: 0
+  enemyName: Dark Mummy
+  health: 100
+  attack: 110
+  defense: 30
+  gold: 22
