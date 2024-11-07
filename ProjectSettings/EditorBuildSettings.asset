@@ -5,7 +5,14 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Robin/MainMenu.unity
+    guid: 0672be62b6d6e134e83ebc3ef19ae876
+  - enabled: 1
+    path: Assets/Scenes/TheLegendOfLocke.unity
+    guid: 8fb71aef5c272a140a7c2e32102f9e38
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
