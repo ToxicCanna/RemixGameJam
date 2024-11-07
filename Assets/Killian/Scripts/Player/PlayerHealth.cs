@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -26,5 +28,19 @@ public class PlayerHealth : MonoBehaviour
     {
         //you just lost the game. WOMP WOMP
         Debug.Log("Player has died.");
+
+        PlayerMovement playerMovement = GetComponent<PlayerMovement>();
+        if (playerMovement != null)
+        {
+            playerMovement.SetDead();
+        }
+
+        StartCoroutine(WaitAndLoadMainMenu());
+    }
+
+    private IEnumerator WaitAndLoadMainMenu()
+    {
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene("MainMenu");
     }
 }

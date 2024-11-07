@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private Tilemap[] floorTilemaps;
     private Tilemap currentTilemap;
 
+    private bool isDead = false;
+
     private void Start()
     {
         targetPosition = transform.position;
@@ -29,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (isDead) return;
+
         if (!isMoving)
         {
             HandleInput();
@@ -64,11 +68,6 @@ public class PlayerMovement : MonoBehaviour
     }
     void MovementCheck()
     {
-        if (currentTilemap == null)
-        {
-            Debug.LogError("Current Tilemap is null!");
-            return; // Exit early to prevent further errors
-        }
         Vector3Int targetTilePos = currentTilemap.WorldToCell(targetPosition);
 
         CustomTile tile = currentTilemap.GetTile<CustomTile>(targetTilePos);
@@ -111,11 +110,15 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log($"Player teleported to new location: {stairTile.targetPosition}");
     }
     private void MoveTowardsTarget()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+        if ((Vector2)transform.position == targetPosition)
         {
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-            if ((Vector2)transform.position == targetPosition)
-            {
-                isMoving = false;
-            }
+            isMoving = false;
         }
+    }
+    public void SetDead()
+    {
+        isDead = true;
+    }
 }
