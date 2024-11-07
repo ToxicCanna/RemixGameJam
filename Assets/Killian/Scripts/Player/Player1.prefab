@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 205bec70514889d46aada113f2ea2715, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -122,6 +122,10 @@ MonoBehaviour:
   Down: 115
   Left: 97
   Right: 100
+  upSprite: {fileID: 21300000, guid: 205bec70514889d46aada113f2ea2715, type: 3}
+  downSprite: {fileID: 21300000, guid: 247e4e9514e36174c94d5b6faf0ee953, type: 3}
+  leftSprite: {fileID: 21300000, guid: d457823e77f0b1e40b756bc134f8a498, type: 3}
+  rightSprite: {fileID: 21300000, guid: 1d092ee95216c054e800de6d6700e1f6, type: 3}
 --- !u!61 &2956385210279834806
 BoxCollider2D:
   m_ObjectHideFlags: 0

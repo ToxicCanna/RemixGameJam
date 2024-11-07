@@ -14,6 +14,13 @@ public class PlayerMovement : MonoBehaviour
     public KeyCode Left;
     public KeyCode Right;
 
+    public Sprite upSprite;
+    public Sprite downSprite;
+    public Sprite leftSprite;
+    public Sprite rightSprite;
+
+    private SpriteRenderer spriteRenderer;
+
     private Tilemap[] floorTilemaps;
     private Tilemap currentTilemap;
 
@@ -22,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         targetPosition = transform.position;
+        spriteRenderer = GetComponent<SpriteRenderer>();
         floorTilemaps = UnityEngine.Object.FindObjectsByType<Tilemap>(FindObjectsSortMode.None);
         if (floorTilemaps.Length > 0)
         {
@@ -48,21 +56,25 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(Up))
         {
             targetPosition = new Vector2(transform.position.x, transform.position.y + gridSize.y);
+            UpdateSprite("Up");
             MovementCheck();
         }
         if (Input.GetKeyDown(Down))
         {
             targetPosition = new Vector2(transform.position.x, transform.position.y - gridSize.y);
+            UpdateSprite("Down");
             MovementCheck();
         }
         if (Input.GetKeyDown(Left))
         {
             targetPosition = new Vector2(transform.position.x - gridSize.x, transform.position.y);
+            UpdateSprite("Left");
             MovementCheck();
         }
         if (Input.GetKeyDown(Right))
         {
             targetPosition = new Vector2(transform.position.x + gridSize.x, transform.position.y);
+            UpdateSprite("Right");
             MovementCheck();
         }
     }
@@ -120,5 +132,24 @@ public class PlayerMovement : MonoBehaviour
     public void SetDead()
     {
         isDead = true;
+    }
+
+    private void UpdateSprite(string direction)
+    {
+        switch (direction)
+        {
+            case "Up":
+                spriteRenderer.sprite = upSprite;
+                break;
+            case "Down":
+                spriteRenderer.sprite = downSprite;
+                break;
+            case "Left":
+                spriteRenderer.sprite = leftSprite;
+                break;
+            case "Right":
+                spriteRenderer.sprite = rightSprite;
+                break;
+        }
     }
 }
