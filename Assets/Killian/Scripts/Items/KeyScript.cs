@@ -1,7 +1,12 @@
 using UnityEngine;
 
-public class KeyScript : MonoBehaviour
+public class KeyScript : MonoBehaviour, ICollect
 {
+    public void Collect()
+    {
+        
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
