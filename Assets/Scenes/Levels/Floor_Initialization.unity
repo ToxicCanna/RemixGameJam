@@ -2033,6 +2033,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 019c95dd561d2914d9ef2def60d8fdfb, type: 3}
+    - target: {fileID: 6375626842093367259, guid: cbe541e6a614f664bb5223443c44036e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2267,6 +2271,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 247e4e9514e36174c94d5b6faf0ee953, type: 3}
+    - target: {fileID: 4638707784842935380, guid: f41e0a06398164b449f5f7f5339790bf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
