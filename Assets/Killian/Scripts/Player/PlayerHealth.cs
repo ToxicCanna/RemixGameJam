@@ -14,7 +14,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void Damage(int amount)
     {
-        health -= amount;
+        health -= Mathf.Max(amount, 0);
+        health = Mathf.Max(health, 0);
     }
     public void Heal(int amount)
     {
@@ -24,5 +25,6 @@ public class PlayerHealth : MonoBehaviour
     public void Death()
     {
         //you just lost the game. WOMP WOMP
+        Debug.Log("Player has died.");
     }
 }

@@ -20,6 +20,6 @@ public class KeyScript : MonoBehaviour, ICollect
 
         Debug.Log($"{keyColor} key collected!");
 
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }
