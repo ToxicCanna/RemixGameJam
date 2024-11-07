@@ -7,8 +7,6 @@ public class CustomTile : TileBase
     public enum TileType { Empty, Wall, Door, Stair }
     public TileType tileType;
     public PlayerStats.KeyColor requiredKeyColor;
-
-    public int targetFloor;
     public Vector3 targetPosition;
 
     public Sprite wallSprite;

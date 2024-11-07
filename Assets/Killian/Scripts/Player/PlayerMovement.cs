@@ -16,19 +16,14 @@ public class PlayerMovement : MonoBehaviour
 
     private Tilemap[] floorTilemaps;
     private Tilemap currentTilemap;
-    private int currentFloor;
 
     private void Start()
     {
         targetPosition = transform.position;
         floorTilemaps = UnityEngine.Object.FindObjectsByType<Tilemap>(FindObjectsSortMode.None);
-        if (currentFloor >= 0 && currentFloor < floorTilemaps.Length)
+        if (floorTilemaps.Length > 0)
         {
-            currentTilemap = floorTilemaps[currentFloor];
-        }
-        else
-        {
-            Debug.LogError("Current floor index is out of range!");
+            currentTilemap = floorTilemaps[0];
         }
     }
 
@@ -69,45 +64,51 @@ public class PlayerMovement : MonoBehaviour
     }
     void MovementCheck()
     {
-        foreach (var tilemap in floorTilemaps)
+        if (currentTilemap == null)
         {
-
-            Vector3Int targetTilePos = currentTilemap.WorldToCell(targetPosition);
+            Debug.LogError("Current Tilemap is null!");
+            return; // Exit early to prevent further errors
+        }
+        Vector3Int targetTilePos = currentTilemap.WorldToCell(targetPosition);
 
         CustomTile tile = currentTilemap.GetTile<CustomTile>(targetTilePos);
-
-            if (tile != null)
+        if (tile != null)
+        {
+            if (tile.tileType == CustomTile.TileType.Wall)
             {
-                if (tile.tileType == CustomTile.TileType.Wall)
+                Debug.Log("Can't move into a wall!");
+                isMoving = false;
+                return;
+            }
+            else if (tile.tileType == CustomTile.TileType.Door)
+            {
+                if (PlayerStats.Instance.CanPay(tile.requiredKeyColor))
                 {
-                    Debug.Log("Can't move into a wall!");
-                    isMoving = false;
-                    return;
-                }
-                else if (tile.tileType == CustomTile.TileType.Door)
-                {
-                    if (PlayerStats.Instance.CanPay(tile.requiredKeyColor))
-                    {
-                        Debug.Log("Door unlocked!");
-                        isMoving = true;
-                        return;
-                    }
-                    else
-                    {
-                        Debug.Log("This door is locked!");
-                        isMoving = false;
-                        return;
-                    }
-                }
-                else if (tile.tileType == CustomTile.TileType.Stair)
-                {
-                    SwitchFloor(tile.targetFloor, tile.targetPosition);
+                    Debug.Log("Door unlocked!");
+                    currentTilemap.SetTile(targetTilePos, null);
                     isMoving = true;
                     return;
                 }
+                else
+                {
+                    Debug.Log("This door is locked!");
+                    isMoving = false;
+                    return;
+                }
+            }
+            else if (tile.tileType == CustomTile.TileType.Stair)
+            {
+                TeleportToStair(tile);
+                isMoving = true;
+                return;
             }
         }
         isMoving = true;
+    }
+    private void TeleportToStair(CustomTile stairTile)
+    {
+        transform.position = stairTile.targetPosition;
+        Debug.Log($"Player teleported to new location: {stairTile.targetPosition}");
     }
     private void MoveTowardsTarget()
         {
@@ -117,15 +118,4 @@ public class PlayerMovement : MonoBehaviour
                 isMoving = false;
             }
         }
-    private void SwitchFloor(int targetFloor, Vector3 targetPosition)
-    {
-        this.currentFloor = targetFloor;
-
-        currentTilemap = floorTilemaps[currentFloor];
-
-        this.targetPosition = targetPosition;
-        transform.position = targetPosition;
-
-        Debug.Log($"Switched to floor {currentFloor} at position {targetPosition}");
-    }
 }
