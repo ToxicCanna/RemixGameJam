@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-    private Tilemap[] floorTilemaps;
+    private Tilemap floorTilemap;
     private Tilemap currentTilemap;
 
     private bool isDead = false;
@@ -32,10 +32,10 @@ public class PlayerMovement : MonoBehaviour
     {
         targetPosition = transform.position;
         spriteRenderer = GetComponent<SpriteRenderer>();
-        floorTilemaps = UnityEngine.Object.FindObjectsByType<Tilemap>(FindObjectsSortMode.None);
-        if (floorTilemaps.Length > 0)
+        GameObject floorTilemapObject = GameObject.Find("FloorTilemap");
+        if (floorTilemapObject != null)
         {
-            currentTilemap = floorTilemaps[0];
+            floorTilemap = floorTilemapObject.GetComponent<Tilemap>();
         }
     }
 
