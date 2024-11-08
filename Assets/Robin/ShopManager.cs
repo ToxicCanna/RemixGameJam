@@ -41,6 +41,18 @@ public class ShopManager : MonoBehaviour
         YKeyCostText.text= "YKey ($" + YKeyCost.ToString() + ")";
         BKeyCostText.text = "BKey ($" + BKeyCost.ToString() + ")";
     }
+
+    public void EnableShop(int identity)
+    {
+        if (identity == 0)
+        {
+            powerUpShop.SetActive(true);
+        }
+        if (identity == 1)
+        {
+            keyShop.SetActive(true);
+        }
+    }
     #endregion
 
     #region StatShop
