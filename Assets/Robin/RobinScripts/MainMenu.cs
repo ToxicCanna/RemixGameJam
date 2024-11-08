@@ -5,7 +5,7 @@ public class MainMenu : MonoBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadSceneAsync("TheLegendOfLocke");
+        SceneManager.LoadSceneAsync("RobinScene");
     }
 
     public void Exit()
