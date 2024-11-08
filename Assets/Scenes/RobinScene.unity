@@ -29399,8 +29399,8 @@ MonoBehaviour:
   player2Health: {fileID: 1834689589}
   HP1: {fileID: 1837678596}
   HP2: {fileID: 1141161363}
-  ATK: {fileID: 623505185}
-  DEF: {fileID: 2091767794}
+  atk: {fileID: 623505185}
+  def: {fileID: 2091767794}
   gold: {fileID: 557818588}
   yKey: {fileID: 173860988}
   bKey: {fileID: 914606715}
