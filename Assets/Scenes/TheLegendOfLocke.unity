@@ -21932,6 +21932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9eef61d18ac1704d83c950aa55d0162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hud: {fileID: 1326737917}
   playerStats: {fileID: 452147963}
   player1Health: {fileID: 654975973}
   player2Health: {fileID: 1433307968}
