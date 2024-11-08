@@ -19485,6 +19485,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: e63331c71dde0dd4993d01052eb243b1, type: 3}
     - target: {fileID: 5563056215103382409, guid: f41e0a06398164b449f5f7f5339790bf, type: 3}
+      propertyPath: floorTilemap
+      value: 
+      objectReference: {fileID: 174535590}
+    - target: {fileID: 5563056215103382409, guid: f41e0a06398164b449f5f7f5339790bf, type: 3}
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 313373002}
@@ -54792,6 +54796,10 @@ PrefabInstance:
       propertyPath: rightSprite
       value: 
       objectReference: {fileID: 21300000, guid: 1d092ee95216c054e800de6d6700e1f6, type: 3}
+    - target: {fileID: 863286077180633550, guid: cbe541e6a614f664bb5223443c44036e, type: 3}
+      propertyPath: floorTilemap
+      value: 
+      objectReference: {fileID: 174535590}
     - target: {fileID: 863286077180633550, guid: cbe541e6a614f664bb5223443c44036e, type: 3}
       propertyPath: playerCamera
       value: 

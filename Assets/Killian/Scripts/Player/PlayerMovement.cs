@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public Sprite rightSprite;
 
     private SpriteRenderer spriteRenderer;
-
+    
     private Tilemap floorTilemap;
     private Tilemap currentTilemap;
 
@@ -32,10 +32,15 @@ public class PlayerMovement : MonoBehaviour
     {
         targetPosition = transform.position;
         spriteRenderer = GetComponent<SpriteRenderer>();
-        GameObject floorTilemapObject = GameObject.Find("FloorTilemap");
+        GameObject floorTilemapObject = GameObject.Find("Tilemap");
         if (floorTilemapObject != null)
         {
             floorTilemap = floorTilemapObject.GetComponent<Tilemap>();
+            currentTilemap = floorTilemap;
+        }
+        else
+        {
+            Debug.LogError("FloorTilemap GameObject not found in the scene.");
         }
     }
 
