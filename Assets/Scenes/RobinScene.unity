@@ -29495,6 +29495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9eef61d18ac1704d83c950aa55d0162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hud: {fileID: 855791643}
   playerStats: {fileID: 452147963}
   player1Health: {fileID: 574529361}
   player2Health: {fileID: 1834689589}
@@ -57937,11 +57938,11 @@ SceneRoots:
   - {fileID: 1673227851}
   - {fileID: 411314672}
   - {fileID: 1438580809}
+  - {fileID: 855791647}
   - {fileID: 580324102}
   - {fileID: 766040114}
   - {fileID: 574529360}
   - {fileID: 1834689588}
-  - {fileID: 855791647}
   - {fileID: 1775173040}
   - {fileID: 1431371519}
   - {fileID: 953270675}

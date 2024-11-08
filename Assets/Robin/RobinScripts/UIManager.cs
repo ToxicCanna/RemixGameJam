@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [Header("Reference")]
+    [SerializeField] private GameObject hud;
     [SerializeField] PlayerStats playerStats;
     [SerializeField] PlayerHealth player1Health;
     [SerializeField] PlayerHealth player2Health;
@@ -20,9 +21,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text bKey;
     [SerializeField] private Text rKey;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
+        hud.SetActive(false);
+    }
+    private void Update()
+    {
+        EnableHUD();
+        
         //Player Health
         HP1.text = player1Health.health.ToString();
         HP2.text = player2Health.health.ToString();
@@ -36,5 +42,20 @@ public class UIManager : MonoBehaviour
         yKey.text = playerStats.YKeys.ToString();
         bKey.text = playerStats.BKeys.ToString();
         rKey.text = playerStats.RKeys.ToString();
+    }
+    private void EnableHUD()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            if (hud.activeInHierarchy == true)
+            {
+                hud.SetActive(false);
+            }
+            else
+            {
+                hud.SetActive(true);
+            }
+            
+        }
     }
 }
