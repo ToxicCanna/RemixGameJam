@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isDead = false;
 
+    [SerializeField] private CameraMove playerCamera;
+
     private void Start()
     {
         targetPosition = transform.position;
@@ -120,6 +122,7 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.position = stairTile.targetPosition;
         Debug.Log($"Player teleported to new location: {stairTile.targetPosition}");
+        playerCamera.ChangeFloor(stairTile.targetPosition.x, stairTile.targetPosition.y);
     }
     private void MoveTowardsTarget()
     {
