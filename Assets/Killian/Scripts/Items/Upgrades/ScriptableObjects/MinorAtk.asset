@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MinorAtk
   m_EditorClassIdentifier: 
   upgradeType: 0
-  attackBonus: 1
+  attackBonus: 3
   defenseBonus: 0

@@ -18430,6 +18430,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 863286077180633550, guid: cbe541e6a614f664bb5223443c44036e, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1772833563}
     - target: {fileID: 2956385210279834806, guid: cbe541e6a614f664bb5223443c44036e, type: 3}
       propertyPath: m_Size.x
       value: 1
@@ -54192,6 +54196,10 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5563056215103382409, guid: f41e0a06398164b449f5f7f5339790bf, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 906909905}
     - target: {fileID: 7234707421318527626, guid: f41e0a06398164b449f5f7f5339790bf, type: 3}
       propertyPath: health
       value: 500
