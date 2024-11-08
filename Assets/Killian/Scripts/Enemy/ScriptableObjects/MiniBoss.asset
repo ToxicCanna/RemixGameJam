@@ -16,4 +16,4 @@ MonoBehaviour:
   health: 160
   attack: 90
   defense: 20
-  gold: 100
+  gold: 300
